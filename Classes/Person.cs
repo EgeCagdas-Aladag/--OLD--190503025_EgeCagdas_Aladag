@@ -13,6 +13,10 @@ namespace Private_Musikschule_Verwaltungsanwendung
         protected string surname;
 
     //Constructors
+        protected Person()
+        {
+
+        }
         public Person(int id, string name, string surname)
         {
             this.id = id;

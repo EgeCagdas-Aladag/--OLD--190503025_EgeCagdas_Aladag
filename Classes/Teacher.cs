@@ -9,17 +9,111 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
     class Teacher : Person
     {
         private int teacherId;
-        private List<int> offeredCourses = new List<int>();
         private DateTime workStart;
+        private List<int> offeredCourses = new List<int>();
+        private List<string> instruments = new List<string>();
+        private string infoText;
+        private bool isAdmin = false;
 
-    //Constructors 
-        
-
+        //Constructors 
         public Teacher(int id, string name, string surname)
         {
             this.id = id;
             this.name = name;
             this.surname = surname;
+        }
+
+        public Teacher(string name, string surname)
+        {
+            this.name = name;
+            this.surname = surname;
+        }
+    //Functions:
+        //Get&Set Functions
+        public int TeacherId{ get; set; }
+        public DateTime WorkStart { get; set; }
+        public List<int> OfferedCourses { get; set; }
+        public List<string> Instruments { get; set; }
+        public string InfoText { get; set; }
+        public bool IsAdmin { get; set; }
+
+        //Other functions
+        public void addInstrument(string instrument)
+        {
+            if (!Instruments.Contains(instrument))
+            {
+                Instruments.Add(instrument);
+            }
+            else
+            {
+                //TODO: Alert the user that item already exists
+                //Return -1 here and call alert function from the previous func?
+            }
+        }
+
+        public void removeInstrument(string instrument)
+        {
+            if (Instruments.Contains(instrument))
+            {
+                Instruments.Remove(instrument);
+            }
+            else
+            {
+                //TODO: Alert the user that item does not exist
+                //Return -1 here and call alert function from the previous func?
+            }
+        }
+
+        public void addCourse(int courseId)
+        {
+            if (!OfferedCourses.Contains(courseId))
+            {
+                OfferedCourses.Add(courseId);
+            }
+            else
+            {
+                //TODO: Alert the user that course already exists
+                //Return -1 here and call alert function from the previous func?
+            }
+        }
+
+        public void removeCourse(int courseId)
+        {
+            if (OfferedCourses.Contains(courseId))
+            {
+                OfferedCourses.Remove(courseId);
+            }
+            else
+            {
+                //TODO: Alert the user that course does not exist
+                //Return -1 here and call alert function from the previous func?
+            }
+        }
+
+        public void makeAdmin()
+        {
+            if (!IsAdmin)
+            {
+                IsAdmin = true;
+            }
+            else
+            {
+                ////TODO: Alert the user that user is already an Admin
+                //Return -1 here and call alert function from the previous func?
+            }
+        }
+
+        public void removeAdmin()
+        {
+            if (IsAdmin)
+            {
+                IsAdmin = false;
+            }
+            else
+            {
+                ////TODO: Alert the user that user is already NOT an Admin
+                //Return -1 here and call alert function from the previous func?
+            }
         }
 
     }
