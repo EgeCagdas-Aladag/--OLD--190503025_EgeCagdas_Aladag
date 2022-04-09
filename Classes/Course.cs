@@ -8,11 +8,14 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
 {
     class Course
     {
-        int courseId;
-        int price;
-        List<string> requiredInstruments;
-        List<int> sessions;
+        public int CourseId { get; set; }
+        public int Price { get; set; }
+        public List<string> RequiredInstruments { get; set; }
+        public List<int> Sessions { get; set; }
 
-        //TODO: Add get&sets and functions
+    //FUNCTIONS
+        //TODO
+
+
     }
 }

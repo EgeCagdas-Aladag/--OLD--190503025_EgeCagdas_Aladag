@@ -8,37 +8,28 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
 {
     class Teacher : Person
     {
-        private int teacherId;
-        private DateTime workStart;
-        private List<int> offeredCourses = new List<int>();
-        private List<string> instruments = new List<string>();
-        private string infoText;
-        private bool isAdmin = false;
-
-        //Constructors 
-        public Teacher(int id, string name, string surname)
-        {
-            this.id = id;
-            this.name = name;
-            this.surname = surname;
-        }
-
-        public Teacher(string name, string surname)
-        {
-            this.name = name;
-            this.surname = surname;
-        }
-    //Functions:
-        //Get&Set Functions
-        public int TeacherId{ get; set; }
+        public int TeacherId { get; set; }
         public DateTime WorkStart { get; set; }
         public List<int> OfferedCourses { get; set; }
         public List<string> Instruments { get; set; }
         public string InfoText { get; set; }
         public bool IsAdmin { get; set; }
 
-        //Other functions
-        public void addInstrument(string instrument)
+        //Constructors 
+        public Teacher(int id, string name, string surname)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Surname = surname;
+        }
+
+        public Teacher(string name, string surname)
+        {
+            this.Name = name;
+            this.Surname = surname;
+        }
+    //Functions:
+        public void AddInstrument(string instrument)
         {
             if (!Instruments.Contains(instrument))
             {
@@ -51,7 +42,7 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
             }
         }
 
-        public void removeInstrument(string instrument)
+        public void RemoveInstrument(string instrument)
         {
             if (Instruments.Contains(instrument))
             {
@@ -64,7 +55,7 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
             }
         }
 
-        public void addCourse(int courseId)
+        public void AddCourse(int courseId)
         {
             if (!OfferedCourses.Contains(courseId))
             {
@@ -77,7 +68,7 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
             }
         }
 
-        public void removeCourse(int courseId)
+        public void RemoveCourse(int courseId)
         {
             if (OfferedCourses.Contains(courseId))
             {
@@ -90,7 +81,7 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
             }
         }
 
-        public void makeAdmin()
+        public void MakeAdmin()
         {
             if (!IsAdmin)
             {
@@ -103,7 +94,7 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
             }
         }
 
-        public void removeAdmin()
+        public void RemoveAdmin()
         {
             if (IsAdmin)
             {

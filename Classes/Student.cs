@@ -8,18 +8,14 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
 {
     class Student : Person
     {
-        private int studentId;
-        private List<int> registeredCourses = new List<int>();
-        private int totalFees;
-
-    //FUNCTIONS
-        //Get&Set Functions
         public int StudentId { get; set; }
         public List<int> RegisteredCourses { get; set; }
         public int TotalFees { get; set; }
 
-        //Other Functions
-        public void addFee(int amount)
+    //CONSTRUCTORS
+
+    //FUNCTIONS
+        public void AddFee(int amount)
         {
             if (amount > 0)
             {
@@ -31,7 +27,7 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
             }
         }
 
-        public void subtractFee(int amount)
+        public void SubtractFee(int amount)
         {
             if (amount > 0)
             {
@@ -43,7 +39,7 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
             }
         }
 
-        public void addCourse(int courseId)
+        public void AddCourse(int courseId)
         {
             if (!RegisteredCourses.Contains(courseId))
             {
@@ -56,7 +52,7 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
 
         }
 
-        public void removeCourse(int courseId)
+        public void RemoveCourse(int courseId)
         {
             if (RegisteredCourses.Contains(courseId))
             {

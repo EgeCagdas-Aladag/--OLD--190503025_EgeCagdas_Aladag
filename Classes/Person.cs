@@ -8,9 +8,10 @@ namespace Private_Musikschule_Verwaltungsanwendung
 {
     class Person
     {
-        protected int id;
-        protected string name;
-        protected string surname;
+        //Get&Set Functions
+        protected int Id { get; set; }
+        protected string Name { get; set; }
+        protected string Surname { get; set; }
 
     //Constructors
         protected Person()
@@ -19,25 +20,18 @@ namespace Private_Musikschule_Verwaltungsanwendung
         }
         public Person(int id, string name, string surname)
         {
-            this.id = id;
-            this.name = name;
-            this.surname = surname;
+            this.Id = id;
+            this.Name = name;
+            this.Surname = surname;
 
         }
 
         public Person(string name, string surname)
         {
-            this.name = name;
-            this.surname = surname;
+            this.Name = name;
+            this.Surname = surname;
         }
 
     //Functions:
-        //Get&Set Functions
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-
-        //Others
-
     }
 }
