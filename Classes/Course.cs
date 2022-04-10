@@ -15,7 +15,30 @@ namespace Private_Musikschule_Verwaltungsanwendung.Classes
 
     //FUNCTIONS
         //TODO
+        public void AddInstrument(string instrument)
+        {
+            if (!this.RequiredInstruments.Contains(instrument))
+            {
+                this.RequiredInstruments.Add(instrument);
+            }
+            else
+            {
+                //TODO Throw exception?
+            }
 
+        }
+
+        public void RemoveInstrument(string instrument)
+        {
+            if (this.RequiredInstruments.Contains(instrument))
+            {
+                this.RequiredInstruments.Remove(instrument);
+            }
+            else
+            {
+                //TODO Throw exception?
+            }
+        }
 
     }
 }
