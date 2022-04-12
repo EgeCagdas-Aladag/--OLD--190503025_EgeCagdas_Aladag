@@ -9,4 +9,4 @@ Keeping note of half-done parts that need another pass here as reminders until p
 - ...
 
 ### DE<br>
-Ich werde diese Datei so wie eine TO-DO Liste verwenden, um einige Teilen des Projekts später noch mal zu besuchen. Die Liste ist nur auf Englisch verfügbar.
+Ich werde diese Datei (für jetzt) so wie eine TO-DO Liste verwenden, um einige Teilen des Projekts später noch mal zu besuchen. Die Liste ist nur auf Englisch verfügbar.
