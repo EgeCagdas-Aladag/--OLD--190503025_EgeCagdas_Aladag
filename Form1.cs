@@ -14,23 +14,24 @@ namespace Private_Musikschule_Verwaltungsanwendung
 {
     public partial class Form1 : Form
     {
+        //SQLITE:
+        private SQLiteConnection sqlite_connection;
+        private SQLiteCommand sqlite_command;
+        
         public Form1()
         {
             InitializeComponent();
-
-            
-
             
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            SQLiteConnection sqlite_connection;
-            sqlite_connection = CreateConnection();
+            Database.sqlite_connection = Database.CreateConnection();
+            Database.sqlite_command = Database.sqlite_connection.CreateCommand();
         }
         
-        SQLiteConnection CreateConnection()
+        //Will be deleted once Database.cs is confirmed to be working alright.
+        /*private SQLiteConnection CreateConnection()
         {
             SQLiteConnection sqlite_connection;
             sqlite_connection = new SQLiteConnection(@"DataSource=D:\INF202 Project\Private Musikschule Verwaltungsanwendung\Private Musikschule Verwaltungsanwendung\Data\MusicSchool.db;" +
@@ -45,8 +46,37 @@ namespace Private_Musikschule_Verwaltungsanwendung
                 Console.WriteLine(e.Message);
             }
 
-            Console.WriteLine("CONNECTED TO DATABASE.");
+            //Console.WriteLine("CONNECTED TO DATABASE.");
             return sqlite_connection;
+        }*/
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            //TODO Check login
+
+            
         }
+
+        private void createUserButton_Click(object sender, EventArgs e)
+        {
+            string username = usernameField.Text;
+            string password = passwordField.Text;
+
+
+            if (username.Length > 4 && password.Length > 4)
+            {
+                Database.createNewUser(username,password);
+                warningLabel.Text = "User created."; //UI stuff just for testing, will be removed from this function. Same for below.
+                warningLabel.Visible = true;
+            }
+            else
+            {
+                warningLabel.Text = "Username and password must be longer than 4 characters.";
+                warningLabel.Visible = true;
+            }
+                
+        }
+
+        
     }
 }
